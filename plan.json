@@ -9,6 +9,18 @@
         {"name":"Makroekonomia", "start":11.00, "group":"W1"}
     ],
     "wednesday":[
-        {"name":"GOWNO", "start":9.00, "group":"W1"}
+        {"name":"Zajecia", "start":9.00, "group":"W1"}
+    ],
+    "thursday":[
+        {"name":"Zajecia", "start":9.00, "group":"W1"}
+    ],
+    "friday":[
+        {"name":"Zajecia", "start":9.00, "group":"W1"}
+    ],
+    "saturday":[
+        {"name":"Zajecia", "start":9.00, "group":"W1"}
+    ],
+    "sunday":[
+        {"name":"Zajecia", "start":9.00, "group":"W1"}
     ]
 }
