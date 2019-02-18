@@ -1,12 +1,12 @@
 {
     "monday":[
-        {"name":"Basen", "start":9.15, "group":["B1","B2","B3"]},
-        {"name":"Basen", "start":10.00, "group":["B4","B5","B6","B8"]},
-        {"name":"Makroekonomia", "start":11.00, "group":"C3"}
+        {"name":"Basen", "start":9.15, "end": 10.00, "teacher": "", "group":["B1","B2","B3"]},
+        {"name":"Basen", "start":10.00, "end": 10.00, "teacher": "", "group":["B4","B5","B6","B8"]},
+        {"name":"Makroekonomia", "start":11.00, "end": 10.00, "teacher": "", "group":"C3"}
     ],
     "tuesday":[
-        {"name":"Finanse", "start":9.00, "group":"W6"},
-        {"name":"Makroekonomia", "start":11.00, "group":"W6"}
+        {"name":"Finanse", "start":9.00, "end":11.00, "teacher": "Pogorzelski", "group":"W6"},
+        {"name":"Makroekonomia", "start":11.00, "end":13.00, "teacher": "Mackiewicz", "group":"W6"}
     ],
     "wednesday":[
         {"name":"Zajecia", "start":9.00, "group":"W6"}
