@@ -1,15 +1,15 @@
 {
     "monday":[
         {"name":"Basen", "start":9.15, "group":["B1","B2","B3"]},
-        {"name":"Basen", "start":10.00, "group":["B4","B5","B6"]},
-        {"name":"Makroekonomia", "start":11.00, "group":"C1"}
+        {"name":"Basen", "start":10.00, "group":["B4","B5","B6","B8"]},
+        {"name":"Makroekonomia", "start":11.00, "group":"C3"}
     ],
     "tuesday":[
-        {"name":"Finanse", "start":9.00, "group":"W1"},
-        {"name":"Makroekonomia", "start":11.00, "group":"W1"}
+        {"name":"Finanse", "start":9.00, "group":"W6"},
+        {"name":"Makroekonomia", "start":11.00, "group":"W6"}
     ],
     "wednesday":[
-        {"name":"Zajecia", "start":9.00, "group":"W1"}
+        {"name":"Zajecia", "start":9.00, "group":"W6"}
     ],
     "thursday":[
         {"name":"Zajecia", "start":9.00, "group":"W1"}
@@ -21,6 +21,6 @@
         {"name":"Zajecia", "start":9.00, "group":"W1"}
     ],
     "sunday":[
-        {"name":"Zajecia", "start":9.00, "group":"W1"}
+        {"name":"Zajecia", "start":9.00, "group":"W6"}
     ]
 }
