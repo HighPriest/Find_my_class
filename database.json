@@ -1,0 +1,14 @@
+{
+    "monday":[
+        {"name":"Basen", "start":9.15, "group":["B1","B2","B3"]},
+        {"name":"Basen", "start":10.00, "group":["B4","B5","B6"]},
+        {"name":"Makroekonomia", "start":11.00, "group":"C1"}
+    ],
+    "tuesday":[
+        {"name":"Finanse", "start":9.00, "group":"W1"},
+        {"name":"Makroekonomia", "start":11.00, "group":"W1"}
+    ],
+    "wednesday":[
+        {"name":"GOWNO", "start":9.00, "group":"W1"}
+    ]
+}

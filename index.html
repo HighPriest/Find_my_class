@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h2>Make a table based on the value of a drop down menu.</h2>
+
+    <input type="number" id="grupa" onchange="group_select(this.value)">
+    <select id="myselect" onchange="group_select(this.value)">
+        <option value="">Choose an option:</option>
+        <option value="B1">B1</option>
+        <option value="W1">W1</option>
+    </select>
+    <button onclick="create_tables()"></button>
+
+    <table>
+        <tbody id="monday">
+            <tr>
+                <th colspan="3">Poniedziałek</th>
+            </tr>
+        </tbody>
+        <tbody id="tuesday">
+            <tr>
+                <th colspan="3">Wtorek</th>
+            </tr>
+        </tbody>
+        <tbody id="wednesday">
+            <tr>
+                <th colspan="3">Środa</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var database;
+        var days = document.getElementsByTagName('tbody');
+
+        // using Promise
+        fetch("https://raw.githubusercontent.com/pojebunny/Timetable-creator/master/database.json")
+            .then(response => response.json())
+            .then(data => database = data);
+
+
+
+        function create_tables() {
+            for (var i = 0; i < days.length; i++) {
+                for (var j = 0; j < database[days[i].id].length; j++) {
+                    var tr = "<tr>" + "<td>" + database[days[i].id][j].name + "</td>" + "<td>" + database[days[i].id][j].start.toString() + "</td></tr>";
+                    days[i].innerHTML += tr;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
