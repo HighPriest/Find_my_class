@@ -1,26 +1,86 @@
 {
     "monday":[
-        {"name":"Basen", "start":9.15, "end": 10.00, "teacher": "", "group":["B1","B2","B3"]},
-        {"name":"Basen", "start":10.00, "end": 10.00, "teacher": "", "group":["B4","B5","B6","B8"]},
-        {"name":"Makroekonomia", "start":11.00, "end": 10.00, "teacher": "", "group":"C3"}
+        {"name":"Basen", "start":9.15, "end": 10.00, "teacher": "", "room": "", "group":["B1","B2","B3"]},
+        {"name":"Basen", "start":10.00, "end": 10.00, "teacher": "", "room": "", "group":["B4","B5","B6","B8"]},
+        {"name":"Makroekonomia", "start":11.00, "end": 13.00, "teacher": "Wyszkowska-Wróbel", "room": "315", "group":"C1"},
+        {"name":"Makroekonomia","start":13.00 , "end":15.00 , "teacher":"Wyszkowska-Wróbel", "room": "315", "group":"C2"},
+        {"name":"Makroekonomia","start":13.00 , "end":15.00 , "teacher":"Sywula", "room": "213", "group":"C3"},
+        {"name":"Makroekonomia","start":15.00 , "end":17.00 , "teacher":"Sywula", "room": "314", "group":"C4"},
+        {"name":"Marketing","start":14.00 , "end":17.00 , "teacher":"Spodarczyk / Mackiewicz", "room": "305", "group":"C5"},
+        {"name":"Prawo Gospodarcze","start":15.30 , "end":17.00 , "teacher":"Puszkarski", "room": "B21", "group":"W1"},
+        {"name":"Prawo Gospodarcze","start":17.00 , "end":19.00 , "teacher":"Puszkarski", "room": "B21", "group":"W2"}
     ],
     "tuesday":[
-        {"name":"Finanse", "start":9.00, "end":11.00, "teacher": "Pogorzelski", "group":"W6"},
-        {"name":"Makroekonomia", "start":11.00, "end":13.00, "teacher": "Mackiewicz", "group":"W6"}
+        {"name":"Finanse", "start":9.00, "end":11.00, "teacher": "Pogorzelski", "room": "B20", "group":"W1"},
+        {"name":"Makroekonomia", "start":9.00, "end":11.00, "teacher": "Mackiewicz", "room": "B21", "group":"W2"},
+        {"name":"Makroekonomia", "start":11.00, "end":13.00, "teacher": "Mackiewicz", "room": "B21", "group":"W1"},
+        {"name":"Finanse", "start":11.00, "end":13.00, "teacher": "Pogorzelski", "room": "B20", "group":"W2"},
+        {"name":"Marketing", "start":13.00, "end":16.00, "teacher": "Marciszewska", "room": "B20", "group":"W1"},
+        {"name":"Stat.Opis.ćw. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "305", "group":"C4"},
+        {"name":"Makroekonomia ćw.", "start":13.00, "end":15.00, "teacher": "Sywula", "room": "307", "group":"C5"},
+        {"name":"Stat.Opis.ćw. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "305", "group":"C6"},
+        {"name":"Stat.Opis.ćw. (co 2 tyg)", "start":15.00, "end":17.00, "teacher": "Owczarek", "room": "305", "group":"C5"},
+        {"name":"Makroekonomia ćw.", "start":15.00, "end":17.00, "teacher": "Sywula", "room": "307", "group":"C6"},
+        {"name":"Marketing ćw.", "start":16.00, "end":19.00, "teacher": "Spodarczyk / Mackiewicz", "room": "314", "group":"C2"}
     ],
     "wednesday":[
-        {"name":"Zajecia", "start":9.00, "group":"W6"}
+        {"name":"Marketing ćw.", "start":7.00, "end":10.00, "teacher": "Spodarczyk", "room": "314", "group":"C1"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":7.00, "end":9.00, "teacher": "Owczarek", "room": "411", "group":"LS9"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":7.00, "end":9.00, "teacher": "Owczarek", "room": "411", "group":"LS10"},
+        {"name":"Stat. Opis. ćw. (co 2 tyg)", "start":9.00, "end":11.00, "teacher": "Owczarek", "room": "305", "group":"C3"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":9.00, "end":11.00, "teacher": "Owczarek", "room": "411", "group":"LS6"},
+        {"name":"Stat. Opis. ćw. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Owczarek", "room": "305", "group":"C1"},
+        {"name":"Stat. Opis. ćw. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Owczarek", "room": "305", "group":"C2"},
+        {"name":"Marketing ćw.", "start":10.00, "end":13.00, "teacher": "Spodarczyk / Mackiewicz", "room": "314", "group":"C6"},
+        {"name":"Psychologia / Socjologia", "start":13.00, "end":16.00, "teacher": "", "room": "B20", "group":""},
+        {"name":"Marketing ćw.", "start":16.00, "end":19.00, "teacher": "Spodarczyk / Mackiewicz", "room": "314", "group":"C3"}
     ],
     "thursday":[
-        {"name":"Zajecia", "start":9.00, "group":"W1"}
+        {"name":"Angielski", "start":7.00, "end":9.00, "teacher": "Łyszkiewicz", "room": "315", "group":"A1"},
+        {"name":"Angielski", "start":7.00, "end":9.00, "teacher": "Piszczatowska", "room": "307", "group":"A2"},
+        {"name":"Angielski", "start":7.00, "end":9.00, "teacher": "Maksymowicz", "room": "317", "group":"A3"},
+        {"name":"Angielski", "start":7.00, "end":9.00, "teacher": "Klarowska", "room": "213", "group":"A4"},
+        {"name":"Angielski", "start":7.00, "end":9.00, "teacher": "Szaduro", "room": "305", "group":"A5"},
+        {"name":"Angielski", "start":7.00, "end":9.00, "teacher": "Rosłon", "room": "313", "group":"A6"},
+
+        {"name":"Stat. Opis. (co 2 tyg)", "start":9.00, "end":11.00, "teacher": "Owczarek", "room": "B20", "group":"W1"},
+        {"name":"Inf.Ekon. (co 2 tyg)", "start":9.00, "end":11.00, "teacher": "Ratajczak", "room": "B21", "group":"W1"},
+        {"name":"Stat. Opis. (co 2 tyg)", "start":9.00, "end":11.00, "teacher": "Owczarek", "room": "B20", "group":"W2"},
+        {"name":"Inf.Ekon. (co 2 tyg)", "start":9.00, "end":11.00, "teacher": "Ratajczak", "room": "B21", "group":"W2"},
+
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Owczarek", "room": "403", "group":"LS3"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Wolski", "room": "F", "group":"LI7"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Wolski", "room": "F", "group":"LI8"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Wierzbowska", "room": "F", "group":"LI9"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Wierzbowska", "room": "F", "group":"LI10"},
+
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Wolski", "room": "F", "group":"LI1"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Wolski", "room": "F", "group":"LI2"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Wierzbowska", "room": "F", "group":"LI3"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Wierzbowska", "room": "F", "group":"LI4"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "403", "group":"LS4"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "403", "group":"LS5"},
+
+        {"name":"Marketing", "start":13.00, "end":16.00, "teacher": "Marciszewska", "room": "B20", "group":"W2"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":15.00, "end":17.00, "teacher": "Owczarek", "room": "403", "group":"LS1"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":15.00, "end":17.00, "teacher": "Owczarek", "room": "403", "group":"LS2"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":15.00, "end":17.00, "teacher": "Wolski", "room": "F", "group":"LI5"},
+        {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":15.00, "end":17.00, "teacher": "Wolski", "room": "F", "group":"LI6"},
+
+        {"name":"Marketing ćw.", "start":16.00, "end":19.00, "teacher": "Spodarczyk / Mackiewicz", "room": "305", "group":"C5"},
+        {"name":"Inf. Ekon. lab.", "start":16.00, "end":18.00, "teacher": "Mańkowska", "room": "F", "group":"LI11"},
+        {"name":"Inf. Ekon. lab.", "start":16.00, "end":18.00, "teacher": "Mańkowska", "room": "F", "group":"LI12"}
     ],
     "friday":[
-        {"name":"Zajecia", "start":9.00, "group":"W1"}
+        {"name":"Psychologia / Socjologia", "start":8.00, "end":13.00, "teacher": "", "room": "B20", "group":""},
+        {"name":"Marketing ćw.", "start":8.00, "end":11.00, "teacher": "Spodarczyk / Mackiewicz", "room": "314", "group":"C1"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "403", "group":"LS7"},
+        {"name":"Stat. Opis. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "403", "group":"LS8"}
     ],
     "saturday":[
         {"name":"Zajecia", "start":9.00, "group":"W1"}
     ],
     "sunday":[
-        {"name":"Zajecia", "start":9.00, "group":"W6"}
+        {"name":"ZajeciaSom", "start":9.00, "group":"W6"}
     ]
 }
