@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Plan zajęć UMG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         table { border-collapse:collapse; }
@@ -28,7 +28,7 @@
     <h2>Stwórz tabelę wszystkich zajęć przypisanych do twojego numeru albumu</h2>
     <h4>Grupy: W-wykładowa; C-ćwiczeniowa; LS-laboratoria statystyka; LI-laboratoria informatyka; A-angielski; B-basen; E-wybieralny</h4>
 
-    <input type="number" name="index" id="index" placeholder="Nr. Albumu">
+    <input type="number" name="index" id="index" placeholder="Nr. Albumu" onkeydown="if (event.keyCode == 13) create_tables()">
     <button onclick="create_tables()">Generuj</button>
 
     <table>
