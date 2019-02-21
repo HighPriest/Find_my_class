@@ -30,9 +30,9 @@
 
     <input type="number" name="index" id="index" placeholder="Nr. Albumu" onkeydown="if (event.keyCode == 13) create_tables()">
     <button onclick="create_tables()">Generuj</button>
-
-    <table>
-        <tbody id="monday">
+    <div style="display:flex;">
+        <table id="even">
+        <tbody class="monday">
             <tr>
                 <th colspan="5">Poniedziałek</th>
             </tr>
@@ -44,7 +44,7 @@
                 <td>Grupy</td>
             </tr>
         </tbody>
-        <tbody id="tuesday">
+        <tbody class="tuesday">
             <tr>
                 <th colspan="5">Wtorek</th>
             </tr>
@@ -56,7 +56,7 @@
                 <td>Grupy</td>
             </tr>
         </tbody>
-        <tbody id="wednesday">
+        <tbody class="wednesday">
             <tr>
                 <th colspan="5">Środa</th>
             </tr>
@@ -68,7 +68,7 @@
                 <td>Grupy</td>
             </tr>
         </tbody>
-        <tbody id="thursday">
+        <tbody class="thursday">
             <tr>
                 <th colspan="5">Czwartek</th>
             </tr>
@@ -80,7 +80,7 @@
                 <td>Grupy</td>
             </tr>
         </tbody>
-        <tbody id="friday">
+        <tbody class="friday">
             <tr>
                 <th colspan="5">Piątek</th>
             </tr>
@@ -92,13 +92,74 @@
                 <td>Grupy</td>
             </tr>
         </tbody>
-    </table>
-
+        </table>
+        <table id="odd">
+        <tbody class="monday">
+            <tr>
+                <th colspan="5">Poniedziałek</th>
+            </tr>
+            <tr>
+                <td>Czas</td>
+                <td>Nazwa</td>
+                <td>Prowadzący</td>
+                <td>Sala</td>
+                <td>Grupy</td>
+            </tr>
+        </tbody>
+        <tbody class="tuesday">
+            <tr>
+                <th colspan="5">Wtorek</th>
+            </tr>
+            <tr>
+                <td>Czas</td>
+                <td>Nazwa</td>
+                <td>Prowadzący</td>
+                <td>Sala</td>
+                <td>Grupy</td>
+            </tr>
+        </tbody>
+        <tbody class="wednesday">
+            <tr>
+                <th colspan="5">Środa</th>
+            </tr>
+            <tr>
+                <td>Czas</td>
+                <td>Nazwa</td>
+                <td>Prowadzący</td>
+                <td>Sala</td>
+                <td>Grupy</td>
+            </tr>
+        </tbody>
+        <tbody class="thursday">
+            <tr>
+                <th colspan="5">Czwartek</th>
+            </tr>
+            <tr>
+                <td>Czas</td>
+                <td>Nazwa</td>
+                <td>Prowadzący</td>
+                <td>Sala</td>
+                <td>Grupy</td>
+            </tr>
+        </tbody>
+        <tbody class="friday">
+            <tr>
+                <th colspan="5">Piątek</th>
+            </tr>
+            <tr>
+                <td>Czas</td>
+                <td>Nazwa</td>
+                <td>Prowadzący</td>
+                <td>Sala</td>
+                <td>Grupy</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
     <script>
         var plan;
         var uczen;
-        var days = document.getElementsByTagName('tbody');
-
+        var days = [document.getElementsByTagName('table').even.getElementsByTagName('tbody'),document.getElementsByTagName('table').odd.getElementsByTagName('tbody')];
         // using Promise
         fetch("https://raw.githubusercontent.com/pojebunny/Timetable-creator/master/plan.json")
             .then(response => response.json())
@@ -110,18 +171,24 @@
 
         function create_tables() {
             var index = document.getElementById('index').value;
-            for (var i = 0; i < days.length; i++) {
-                for (var j = 0; j < plan[days[i].id].length; j++) {
-                    if(plan[days[i].id][j].group.indexOf("W" + uczen[index][0]) >= 0 
-                    || plan[days[i].id][j].group.indexOf("C" + uczen[index][1]) >= 0
-                    || plan[days[i].id][j].group.indexOf("LS" + uczen[index][2]) >= 0
-                    || plan[days[i].id][j].group.indexOf("LI" + uczen[index][3]) >= 0
-                    || plan[days[i].id][j].group.indexOf("A" + uczen[index][4]) >= 0
-                    || plan[days[i].id][j].group.indexOf("B" + uczen[index][5]) >= 0
-                    || plan[days[i].id][j].group.indexOf("E") >= 0
+            for (var i = 0; i < days[0].length; i++) {
+                for (var j = 0; j < plan[days[0][i].className].length; j++) {
+                    if(plan[days[0][i].className][j].group.indexOf("W" + uczen[index][0]) >= 0 
+                    || plan[days[0][i].className][j].group.indexOf("C" + uczen[index][1]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("LS" + uczen[index][2]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("LI" + uczen[index][3]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("A" + uczen[index][4]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("B" + uczen[index][5]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("E") >= 0
                     ){
-                    var tr = "<tr>" + "<td>" + plan[days[i].id][j].start.toString() + " - " + plan[days[i].id][j].end.toString() + "</td> <td>" + plan[days[i].id][j].name + "</td><td>" + plan[days[i].id][j].teacher + "</td><td>" + plan[days[i].id][j].room + "</td><td>" + plan[days[i].id][j].group + "</td></tr>";
-                    days[i].innerHTML += tr;}
+                        var tr = "<tr>" + "<td>" + plan[days[0][i].className][j].start.toString() + " - " + plan[days[0][i].className][j].end.toString() + "</td> <td>" + plan[days[0][i].className][j].name + "</td><td>" + plan[days[0][i].className][j].teacher + "</td><td>" + plan[days[0][i].className][j].room + "</td><td>" + plan[days[0][i].className][j].group + "</td></tr>";
+                        if(plan[days[0][i].className][j].week != 2){
+                            days[0][i].innerHTML += tr;
+                        }
+                        if (plan[days[0][i].className][j].week != 1){
+                            days[1][i].innerHTML += tr;
+                        }
+                    }
                 }
             }
         }
