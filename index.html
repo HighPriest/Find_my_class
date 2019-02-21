@@ -40,7 +40,7 @@
         <input type="number" name="g_ang" id="g_ang" placeholder="Grupa Angielski">
         <input type="number" name="g_basen" id="g_basen" placeholder="Grupa Basen">
     </div>
-    <button onclick="group_tables()">Generuj</button>
+    <button onclick="clear_tables(); group_tables()">Generuj</button>
     <div style="display:flex;">
         <table id="even">
         <caption>Tydzień parzysty</caption>
@@ -182,6 +182,15 @@
             .then(response => response.json())
             .then(data => uczen = data);
 
+        function clear_tables() {
+            var a = document.getElementsByTagName('tbody');
+
+            for (var i = 0; i < a.length; i++){
+                for (var j = 2; j < a[i].childElementCount; ){
+                    a[i].removeChild(a[i].children[2]);
+                }
+            }
+        }
 
         function index_tables() {
             var index = document.getElementById('index').value;
