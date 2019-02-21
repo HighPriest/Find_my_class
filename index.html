@@ -21,6 +21,9 @@
             background-color: #4CAF50;
             color: white;
         }
+        table::before{
+            display:block;
+        }
     </style>
 </head>
 
@@ -28,10 +31,19 @@
     <h2>Stwórz tabelę wszystkich zajęć przypisanych do twojego numeru albumu</h2>
     <h4>Grupy: W-wykładowa; C-ćwiczeniowa; LS-laboratoria statystyka; LI-laboratoria informatyka; A-angielski; B-basen; E-wybieralny</h4>
 
-    <input type="number" name="index" id="index" placeholder="Nr. Albumu" onkeydown="if (event.keyCode == 13) create_tables()">
-    <button onclick="create_tables()">Generuj</button>
+    <!--<input type="number" name="index" id="index" placeholder="Nr. Albumu" onkeydown="if (event.keyCode == 13) index_tables();">-->
+    <div>
+        <input type="number" name="g_wyklad" id="g_wyklad" placeholder="Grupa Wykładowa">
+        <input type="number" name="g_cwicz" id="g_cwicz" placeholder="Grupa Ćwiczeniowa">
+        <input type="number" name="g_labstat" id="g_labstat" placeholder="Grupa Stat. Lab.">
+        <input type="number" name="g_labinf" id="g_labinf" placeholder="Grupa Inf. Lab.">
+        <input type="number" name="g_ang" id="g_ang" placeholder="Grupa Angielski">
+        <input type="number" name="g_basen" id="g_basen" placeholder="Grupa Basen">
+    </div>
+    <button onclick="group_tables()">Generuj</button>
     <div style="display:flex;">
         <table id="even">
+        <caption>Tydzień parzysty</caption>
         <tbody class="monday">
             <tr>
                 <th colspan="5">Poniedziałek</th>
@@ -94,6 +106,7 @@
         </tbody>
         </table>
         <table id="odd">
+        <caption>Tydzień nieparzysty</caption>
         <tbody class="monday">
             <tr>
                 <th colspan="5">Poniedziałek</th>
@@ -159,7 +172,8 @@
     <script>
         var plan;
         var uczen;
-        var days = [document.getElementsByTagName('table').even.getElementsByTagName('tbody'),document.getElementsByTagName('table').odd.getElementsByTagName('tbody')];
+        var days = [document.getElementsByTagName('table').even.getElementsByTagName('tbody'),
+                    document.getElementsByTagName('table').odd.getElementsByTagName('tbody')];
         // using Promise
         fetch("https://raw.githubusercontent.com/pojebunny/Timetable-creator/master/plan.json")
             .then(response => response.json())
@@ -169,7 +183,7 @@
             .then(data => uczen = data);
 
 
-        function create_tables() {
+        function index_tables() {
             var index = document.getElementById('index').value;
             for (var i = 0; i < days[0].length; i++) {
                 for (var j = 0; j < plan[days[0][i].className].length; j++) {
@@ -182,6 +196,36 @@
                     || plan[days[0][i].className][j].group.indexOf("E") >= 0
                     ){
                         var tr = "<tr>" + "<td>" + plan[days[0][i].className][j].start.toString() + " - " + plan[days[0][i].className][j].end.toString() + "</td> <td>" + plan[days[0][i].className][j].name + "</td><td>" + plan[days[0][i].className][j].teacher + "</td><td>" + plan[days[0][i].className][j].room + "</td><td>" + plan[days[0][i].className][j].group + "</td></tr>";
+                        if(plan[days[0][i].className][j].week != 2){
+                            days[0][i].innerHTML += tr;
+                        }
+                        if (plan[days[0][i].className][j].week != 1){
+                            days[1][i].innerHTML += tr;
+                        }
+                    }
+                }
+            }
+        }
+        
+        function group_tables() {
+            var group = [document.getElementById('g_wyklad').value,
+                        document.getElementById('g_cwicz').value,
+                        document.getElementById('g_labstat').value,
+                        document.getElementById('g_labinf').value,
+                        document.getElementById('g_ang').value,
+                        document.getElementById('g_basen').value];
+            for (var i = 0; i < 6; i++) if (group[i] == "") group[i] = "X";
+            for (var i = 0; i < days[0].length; i++) {
+                for (var j = 0; j < plan[days[0][i].className].length; j++) {
+                    if(plan[days[0][i].className][j].group.indexOf("W" + group[0]) >= 0 
+                    || plan[days[0][i].className][j].group.indexOf("C" + group[1]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("LS" + group[2]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("LI" + group[3]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("A" + group[4]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("B" + group[5]) >= 0
+                    || plan[days[0][i].className][j].group.indexOf("E") >= 0
+                    ){
+                        var tr = "<tr> <td>" + plan[days[0][i].className][j].start.toString() + " - " + plan[days[0][i].className][j].end.toString() + "</td> <td>" + plan[days[0][i].className][j].name + "</td><td>" + plan[days[0][i].className][j].teacher + "</td><td>" + plan[days[0][i].className][j].room + "</td><td>" + plan[days[0][i].className][j].group + "</td></tr>";
                         if(plan[days[0][i].className][j].week != 2){
                             days[0][i].innerHTML += tr;
                         }
