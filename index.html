@@ -194,21 +194,22 @@
 
         function index_tables() {
             var index = document.getElementById('index').value;
-            for (var i = 0; i < days[0].length; i++) {
-                for (var j = 0; j < plan[days[0][i].className].length; j++) {
-                    if(plan[days[0][i].className][j].group.indexOf("W" + uczen[index][0]) >= 0 
-                    || plan[days[0][i].className][j].group.indexOf("C" + uczen[index][1]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("LS" + uczen[index][2]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("LI" + uczen[index][3]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("A" + uczen[index][4]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("B" + uczen[index][5]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("E") >= 0
+            for (let i = 0; i < days[0].length; i++) {
+                for (let j = 0; j < plan[days[0][i].className].length; j++) {
+                    let { name, start, end, teacher, room, week, group } = plan[days[0][i].className][j];
+                    if(group.indexOf("W" + uczen[index][0]) >= 0 
+                    || group.indexOf("C" + uczen[index][1]) >= 0
+                    || group.indexOf("LS" + uczen[index][2]) >= 0
+                    || group.indexOf("LI" + uczen[index][3]) >= 0
+                    || group.indexOf("A" + uczen[index][4]) >= 0
+                    || group.indexOf("B" + uczen[index][5]) >= 0
+                    || group.indexOf("E") >= 0
                     ){
-                        var tr = "<tr>" + "<td>" + plan[days[0][i].className][j].start.toString() + " - " + plan[days[0][i].className][j].end.toString() + "</td> <td>" + plan[days[0][i].className][j].name + "</td><td>" + plan[days[0][i].className][j].teacher + "</td><td>" + plan[days[0][i].className][j].room + "</td><td>" + plan[days[0][i].className][j].group + "</td></tr>";
-                        if(plan[days[0][i].className][j].week != 2){
+                        let tr = `<tr><td>${start.toFixed(2)} - ${end.toFixed(2)}</td><td>${name}</td><td>${teacher}</td><td>${room}</td><td>${group}</td></tr>`;
+                        if(week != 2){
                             days[0][i].innerHTML += tr;
                         }
-                        if (plan[days[0][i].className][j].week != 1){
+                        if (week != 1){
                             days[1][i].innerHTML += tr;
                         }
                     }
@@ -217,28 +218,29 @@
         }
         
         function group_tables() {
-            var group = [document.getElementById('g_wyklad').value,
+            var i_group = [document.getElementById('g_wyklad').value,
                         document.getElementById('g_cwicz').value,
                         document.getElementById('g_labstat').value,
                         document.getElementById('g_labinf').value,
                         document.getElementById('g_ang').value,
                         document.getElementById('g_basen').value];
-            for (var i = 0; i < 6; i++) if (group[i] == "") group[i] = "X";
-            for (var i = 0; i < days[0].length; i++) {
-                for (var j = 0; j < plan[days[0][i].className].length; j++) {
-                    if(plan[days[0][i].className][j].group.indexOf("W" + group[0]) >= 0 
-                    || plan[days[0][i].className][j].group.indexOf("C" + group[1]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("LS" + group[2]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("LI" + group[3]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("A" + group[4]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("B" + group[5]) >= 0
-                    || plan[days[0][i].className][j].group.indexOf("E") >= 0
+            for (let i = 0; i < 6; i++) if (i_group[i] == "") i_group[i] = "X";
+            for (let i = 0; i < days[0].length; i++) {
+                for (let j = 0; j < plan[days[0][i].className].length; j++) {
+                    let { name, start, end, teacher, room, week, group } = plan[days[0][i].className][j];
+                    if(group.indexOf("W" + i_group[0]) >= 0 
+                    || group.indexOf("C" + i_group[1]) >= 0
+                    || group.indexOf("LS" + i_group[2]) >= 0
+                    || group.indexOf("LI" + i_group[3]) >= 0
+                    || group.indexOf("A" + i_group[4]) >= 0
+                    || group.indexOf("B" + i_group[5]) >= 0
+                    || group.indexOf("E") >= 0
                     ){
-                        var tr = "<tr> <td>" + plan[days[0][i].className][j].start.toString() + " - " + plan[days[0][i].className][j].end.toString() + "</td> <td>" + plan[days[0][i].className][j].name + "</td><td>" + plan[days[0][i].className][j].teacher + "</td><td>" + plan[days[0][i].className][j].room + "</td><td>" + plan[days[0][i].className][j].group + "</td></tr>";
-                        if(plan[days[0][i].className][j].week != 2){
+                        let tr = `<tr><td>${start.toFixed(2)} - ${end.toFixed(2)}</td><td>${name}</td><td>${teacher}</td><td>${room}</td><td>${group}</td></tr>`;
+                        if(week != 2){
                             days[0][i].innerHTML += tr;
                         }
-                        if (plan[days[0][i].className][j].week != 1){
+                        if (week != 1){
                             days[1][i].innerHTML += tr;
                         }
                     }

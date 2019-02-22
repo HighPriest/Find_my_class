@@ -32,7 +32,7 @@
         {"name":"Stat. Opis. ćw. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Owczarek", "room": "305", "week":"1", "group":"C1"},
         {"name":"Stat. Opis. ćw. (co 2 tyg)", "start":11.00, "end":13.00, "teacher": "Owczarek", "room": "305", "week":"2", "group":"C2"},
         {"name":"Marketing ćw.", "start":10.00, "end":13.00, "teacher": "Spodarczyk / Mackiewicz", "room": "314", "group":"C6"},
-        {"name":"Psychologia / Socjologia", "start":13.00, "end":16.00, "teacher": "", "room": "B20", "group":"E"},
+        {"name":"Psychologia", "start":13.00, "end":16.00, "teacher": "", "room": "B20", "group":"E"},
         {"name":"Marketing ćw.", "start":16.00, "end":19.00, "teacher": "Spodarczyk / Mackiewicz", "room": "314", "group":"C3"}
     ],
     "thursday":[
@@ -72,7 +72,7 @@
         {"name":"Inf. Ekon. lab. (co 2 tyg)", "start":16.00, "end":18.00, "teacher": "Mańkowska", "room": "F", "week":"2", "group":"LI12"}
     ],
     "friday":[
-        {"name":"Psychologia / Socjologia", "start":8.00, "end":13.00, "teacher": "", "room": "B20", "group":"E"},
+        {"name":"Socjologia", "start":8.00, "end":13.00, "teacher": "", "room": "B20", "group":"E"},
         {"name":"Marketing ćw.", "start":8.00, "end":11.00, "teacher": "Spodarczyk / Mackiewicz", "room": "314", "group":"C1"},
         {"name":"Stat. Opis. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "403", "week":"1", "group":"LS7"},
         {"name":"Stat. Opis. lab. (co 2 tyg)", "start":13.00, "end":15.00, "teacher": "Owczarek", "room": "403", "week":"2", "group":"LS8"}
