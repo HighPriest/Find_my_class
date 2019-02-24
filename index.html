@@ -197,19 +197,19 @@
             for (let i = 0; i < days[0].length; i++) {
                 for (let j = 0; j < plan[days[0][i].className].length; j++) {
                     let { name, start, end, teacher, room, week, group } = plan[days[0][i].className][j];
-                    if(group.indexOf("W" + uczen[index][0]) >= 0 
-                    || group.indexOf("C" + uczen[index][1]) >= 0
-                    || group.indexOf("LS" + uczen[index][2]) >= 0
-                    || group.indexOf("LI" + uczen[index][3]) >= 0
-                    || group.indexOf("A" + uczen[index][4]) >= 0
-                    || group.indexOf("B" + uczen[index][5]) >= 0
+                    if(group.indexOf("W" + uczen[index][0]) >= 0 && group[group.indexOf("W" + uczen[index][0])].length == ("W" + uczen[index][0]).length
+                    || group.indexOf("C" + uczen[index][1]) >= 0 && group[group.indexOf("C" + uczen[index][1])].length == ("C" + uczen[index][1]).length
+                    || group.indexOf("LS" + uczen[index][2]) >= 0 && group[group.indexOf("LS" + uczen[index][2])].length == ("LS" + uczen[index][2]).length
+                    || group.indexOf("LI" + uczen[index][3]) >= 0 && group[group.indexOf("LI" + uczen[index][3])].length == ("LI" + uczen[index][3]).length
+                    || group.indexOf("A" + uczen[index][4]) >= 0 && group[group.indexOf("A" + uczen[index][4])].length == ("A"+uczen[index][4]).length
+                    || group.indexOf("B" + uczen[index][5]) >= 0 && group[group.indexOf("B" + uczen[index][5])].length == ("B"+uczen[index][5]).length
                     || group.indexOf("E") >= 0
                     ){
                         let tr = `<tr><td>${start.toFixed(2)} - ${end.toFixed(2)}</td><td>${name}</td><td>${teacher}</td><td>${room}</td><td>${group}</td></tr>`;
-                        if(week != 2){
+                        if (week != 1){
                             days[0][i].innerHTML += tr;
                         }
-                        if (week != 1){
+                        if(week != 2){
                             days[1][i].innerHTML += tr;
                         }
                     }
@@ -228,19 +228,19 @@
             for (let i = 0; i < days[0].length; i++) {
                 for (let j = 0; j < plan[days[0][i].className].length; j++) {
                     let { name, start, end, teacher, room, week, group } = plan[days[0][i].className][j];
-                    if(group.indexOf("W" + i_group[0]) >= 0 
-                    || group.indexOf("C" + i_group[1]) >= 0
-                    || group.indexOf("LS" + i_group[2]) >= 0
-                    || group.indexOf("LI" + i_group[3]) >= 0
-                    || group.indexOf("A" + i_group[4]) >= 0
-                    || group.indexOf("B" + i_group[5]) >= 0
+                    if(group.indexOf("W" + i_group[0]) >= 0 && group[group.indexOf("W" + i_group[0])].length == ("W" + i_group[0]).length
+                    || group.indexOf("C" + i_group[1]) >= 0 && group[group.indexOf("C" + i_group[1])].length == ("C" + i_group[1]).length
+                    || group.indexOf("LS" + i_group[2]) >= 0 && group[group.indexOf("LS" + i_group[2])].length == ("LS" + i_group[2]).length
+                    || group.indexOf("LI" + i_group[3]) >= 0 && group[group.indexOf("LI" + i_group[3])].length == ("LI" + i_group[3]).length
+                    || group.indexOf("A" + i_group[4]) >= 0 && group[group.indexOf("A" + i_group[4])].length == ("A"+i_group[4]).length
+                    || group.indexOf("B" + i_group[5]) >= 0 && group[group.indexOf("B" + i_group[5])].length == ("B"+i_group[5]).length
                     || group.indexOf("E") >= 0
                     ){
                         let tr = `<tr><td>${start.toFixed(2)} - ${end.toFixed(2)}</td><td>${name}</td><td>${teacher}</td><td>${room}</td><td>${group}</td></tr>`;
-                        if(week != 2){
+                        if (week != 1){
                             days[0][i].innerHTML += tr;
                         }
-                        if (week != 1){
+                        if(week != 2){
                             days[1][i].innerHTML += tr;
                         }
                     }
