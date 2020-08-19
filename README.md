@@ -1,4 +1,4 @@
-**Timetable creator
+**Timetable creator**
 
 HTML script useful if your school shares only a static/combined timetable for all groups in your class. Just scrape the data into format like in the examples and input your group numbers to quickly get your timetable without mistakes
 
